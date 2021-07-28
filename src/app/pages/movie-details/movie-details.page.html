@@ -4,6 +4,24 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true" *ngIf="movie">
+  <div id="movieInfoContainer" >
+    <div id="movieBox">
+      <div id="moviePoster">
+        <img src="https://image.tmdb.org/t/p/w200{{movie.poster_path}}" alt="{{movie.title}}" height="100%">
+      </div>
+      <div id="movieInfo">
 
+        <ion-title>{{movie.title}}</ion-title>
+
+        <ion-text>{{movie.overview}}</ion-text>
+
+        <ion-title>{{movie.release_date}}</ion-title>
+
+        <ion-title>{{movie.vote_average}}</ion-title>
+
+      </div>
+    </div>
+  </div>
 </ion-content>
+

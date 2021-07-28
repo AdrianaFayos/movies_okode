@@ -1,0 +1,53 @@
+#movieInfoContainer {
+    height: 100vh;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+  #movieInfoContainer strong {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  #movieInfoContainer p {
+    font-size: 16px;
+    line-height: 22px;
+  
+    color: #8c8c8c;
+  
+    margin: 0;
+  }
+  
+  #movieInfoContainer a {
+    text-decoration: none;
+  }
+
+  #movieBox{
+    border: solid white .2em;
+    border-radius: .2em;
+    width: 65em;
+    height: 30em;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+
+  }
+
+  #moviePoster{
+    width: 20em;
+    height: 25em;
+  }
+
+  #movieInfo{
+    width: 35em;
+    height: 25em;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
