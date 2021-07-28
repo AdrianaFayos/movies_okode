@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Okode Movies App</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="movieContainer">
+
+    <ion-searchbar color="light" placeholder="Please enter a title" [(ngModel)]="title" (ionChange)="searchByTitle()" id="search"></ion-searchbar>
+  
+    <div id="foundMovies">
+      <ion-item class="movie" button *ngFor="let movie of (results | async)" [routerLink]="['/', 'movie-details', movie.id]">
+  
+          <img id="moviePoster" slot="start" src="https://image.tmdb.org/t/p/w200{{movie.poster_path}}" alt="{{movie.title}}" height="100%">
+  
+      </ion-item>
+    </div>
+
+  </div>
+
+</ion-content>
