@@ -14,7 +14,7 @@ export class MoviesPage implements OnInit {
   results : Observable<IMovies>;
   title: string = '';
 
-  constructor(private movieService: MovieService) { }
+  constructor(public movieService: MovieService) { }
 
   ngOnInit() {
   }
