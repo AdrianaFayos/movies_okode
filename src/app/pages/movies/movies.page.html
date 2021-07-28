@@ -4,18 +4,20 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-searchbar [(ngModel)]="title" (ionChange)="searchByTitle($event)"></ion-searchbar>
+<ion-content [fullscreen]="true">
 
-  <ion-list>
-    <ion-item button *ngFor="let movie of (results | async)" [routerLink]="['/', 'movie-details', movie.id]">
+  <div class="movieContainer">
 
-      <ion-avatar slot="start">
+    <ion-searchbar color="light" placeholder="Please enter a title"[(ngModel)]="title" (ionChange)="searchByTitle($event)" id="search"></ion-searchbar>
+  
+    <div id="foundMovies">
+      <ion-item class="movie" button *ngFor="let movie of (results | async)" [routerLink]="['/', 'movie-details', movie.id]" style="background-color: transparent !important;">
+  
+          <img id="moviePoster" slot="start" src="https://image.tmdb.org/t/p/w200{{movie.poster_path}}" alt="{{movie.title}}" height="100%">
+  
+      </ion-item>
+    </div>
 
-        <img src="https://image.tmdb.org/t/p/w200{{movie.poster_path}}" alt="{{movie.title}}">
+  </div>
 
-      </ion-avatar>
-
-    </ion-item>
-  </ion-list>
 </ion-content>

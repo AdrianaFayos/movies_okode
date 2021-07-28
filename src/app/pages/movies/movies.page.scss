@@ -1,0 +1,42 @@
+.movieContainer {
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.movie{
+    height: 20em;
+    width: 15em;
+    margin: 1em;
+    transition: .2s;
+
+  &:hover{ 
+    
+    transform: scale(1.05);
+    transition: .2s;
+     
+  }
+}
+
+#moviePoster {
+  border-radius: 0.2em;
+}
+
+#foundMovies{
+  margin: 3em;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#search {
+  margin: 2em;
+  width: 30em;
+}
