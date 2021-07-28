@@ -18,7 +18,7 @@ export class MoviesPage implements OnInit {
   ngOnInit() {
   }
 
-  searchByTitle () {
+  searchByTitle ():void {
     this.results = this.movieService.searchMovies(this.title)
   }
 

@@ -1,9 +1,11 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>movies</ion-title>
+    <ion-title>Okode Movies App</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-searchbar [(ngModel)]="title" (ionChange)="searchByTitle($event)">
 
+  </ion-searchbar>
 </ion-content>
