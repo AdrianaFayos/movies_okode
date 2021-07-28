@@ -18,7 +18,7 @@ export class MovieService {
     this.url = `https://api.themoviedb.org/3/search/movie?api_key=210d6a5dd3f16419ce349c9f1b200d6d&query=${encodeURI(title)}`;
 
     console.log(this.url)
-    return this.http.get<IMovies>(this.url).pipe(map(results => results['search']));
+    return this.http.get<IMovies>(this.url).pipe(map(results => results['results']));
 
   }
 

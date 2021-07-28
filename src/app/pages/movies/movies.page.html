@@ -5,7 +5,17 @@
 </ion-header>
 
 <ion-content>
-  <ion-searchbar [(ngModel)]="title" (ionChange)="searchByTitle($event)">
+  <ion-searchbar [(ngModel)]="title" (ionChange)="searchByTitle($event)"></ion-searchbar>
 
-  </ion-searchbar>
+  <ion-list>
+    <ion-item button *ngFor="let movie of (results | async)" [routerLink]="['/', 'movie', movie.id]">
+
+      <ion-avatar slot="start">
+
+        <img src="https://image.tmdb.org/t/p/w200{{movie.poster_path}}" alt="{{movie.title}}">
+
+      </ion-avatar>
+
+    </ion-item>
+  </ion-list>
 </ion-content>
