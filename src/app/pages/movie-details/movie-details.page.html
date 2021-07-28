@@ -1,27 +1,32 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>movieDetails</ion-title>
+    <ion-title>Okode Movies App</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" *ngIf="movie">
-  <div id="movieInfoContainer" >
-    <div id="movieBox">
-      <div id="moviePoster">
-        <img src="https://image.tmdb.org/t/p/w200{{movie.poster_path}}" alt="{{movie.title}}" height="100%">
+<ion-content>
+
+  <div id="movieInfoContainer">
+
+    <ion-card *ngIf="movie" id="movieBox">
+      <div id="button">
+        <ion-button color="medium" [routerLink]="['/', 'movies']" >X</ion-button>
       </div>
-      <div id="movieInfo">
+      <ion-card-content>
+        <img src="https://image.tmdb.org/t/p/w200{{movie.poster_path}}" alt="{{movie.title}}" >
+      </ion-card-content>
 
-        <ion-title>{{movie.title}}</ion-title>
+      <ion-card-title>{{movie.title}}</ion-card-title>
 
-        <ion-text>{{movie.overview}}</ion-text>
+      <ion-card-subtitle>{{movie.overview}}</ion-card-subtitle>
 
-        <ion-title>{{movie.release_date}}</ion-title>
+      <ion-card-subtitle>{{movie.release_date}}</ion-card-subtitle>
 
-        <ion-title>{{movie.vote_average}}</ion-title>
+      <ion-card-subtitle>{{movie.vote_average}}</ion-card-subtitle>
 
-      </div>
-    </div>
+    </ion-card>
+
   </div>
+
 </ion-content>
 
