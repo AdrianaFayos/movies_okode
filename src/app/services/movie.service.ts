@@ -9,13 +9,19 @@ import { IMovies } from '../model/IMovies.interface';
 })
 export class MovieService {
 
+  private url:string = '';
+
   constructor(private http: HttpClient) { }
 
-  searchMovies () {
+  searchMovies (title:string) {
+
+    this.url = `https://api.themoviedb.org/3/search/movie?api_key=210d6a5dd3f16419ce349c9f1b200d6d&query=${encodeURI(title)}`;
+
+    return this.http.get<IMovies>(this.url).pipe(map(results => results['search']));
 
   }
 
   getMovieDetail () {
-    
+
   }
 }
