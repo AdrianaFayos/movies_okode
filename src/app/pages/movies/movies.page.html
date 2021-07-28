@@ -8,7 +8,7 @@
   <ion-searchbar [(ngModel)]="title" (ionChange)="searchByTitle($event)"></ion-searchbar>
 
   <ion-list>
-    <ion-item button *ngFor="let movie of (results | async)" [routerLink]="['/', 'movie', movie.id]">
+    <ion-item button *ngFor="let movie of (results | async)" [routerLink]="['/', 'movie-details', movie.id]">
 
       <ion-avatar slot="start">
 
