@@ -9,11 +9,13 @@
   <div id="movieInfoContainer">
 
     <ion-card *ngIf="movie" id="movieBox">
+
       <div id="button">
         <ion-button color="medium" [routerLink]="['/', 'movies']" >X</ion-button>
       </div>
+
       <ion-card-content>
-        <img src="https://image.tmdb.org/t/p/w200{{movie.poster_path}}" alt="{{movie.title}}" >
+        <img src="https://image.tmdb.org/t/p/w200{{movie.poster_path}}" alt="{{movie.title}}">
       </ion-card-content>
 
       <ion-card-title>{{movie.title}}</ion-card-title>

@@ -8,10 +8,10 @@
 
   <div class="movieContainer">
 
-    <ion-searchbar color="light" placeholder="Please enter a title"[(ngModel)]="title" (ionChange)="searchByTitle($event)" id="search"></ion-searchbar>
+    <ion-searchbar color="light" placeholder="Please enter a title" [(ngModel)]="title" (ionChange)="searchByTitle()" id="search"></ion-searchbar>
   
     <div id="foundMovies">
-      <ion-item class="movie" button *ngFor="let movie of (results | async)" [routerLink]="['/', 'movie-details', movie.id]" style="background-color: transparent !important;">
+      <ion-item class="movie" button *ngFor="let movie of (results | async)" [routerLink]="['/', 'movie-details', movie.id]">
   
           <img id="moviePoster" slot="start" src="https://image.tmdb.org/t/p/w200{{movie.poster_path}}" alt="{{movie.title}}" height="100%">
   
