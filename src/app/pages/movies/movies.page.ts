@@ -12,7 +12,7 @@ import { Movie } from 'src/app/model/movie.interface';
 export class MoviesPage implements OnInit {
 
   results : Observable<Movie>;
-  title: string = '';
+  title: string;
 
   constructor(public movieService: MovieService) { }
 
