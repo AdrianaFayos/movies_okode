@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MovieService } from 'src/app/services/movie.service';
-import { IMovies } from 'src/app/model/IMovies.interface';
+import { Movie } from 'src/app/model/movie.interface';
 
 @Component({
   selector: 'app-movies',
@@ -11,8 +11,8 @@ import { IMovies } from 'src/app/model/IMovies.interface';
 
 export class MoviesPage implements OnInit {
 
-  results : Observable<IMovies>;
-  title: string = '';
+  results : Observable<Movie>;
+  title: string;
 
   constructor(public movieService: MovieService) { }
 

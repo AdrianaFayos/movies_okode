@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { IMovies } from '../model/IMovies.interface';
+import { Movie } from '../model/movie.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,7 @@ import { IMovies } from '../model/IMovies.interface';
 
 export class MovieService {
 
-  private url : string = '';
+  private url : string;
 
   constructor(private http : HttpClient) { }
 
@@ -18,16 +18,16 @@ export class MovieService {
 
     this.url = `https://api.themoviedb.org/3/search/movie?api_key=210d6a5dd3f16419ce349c9f1b200d6d&query=${encodeURI(title)}`;
 
-    return this.http.get<IMovies>(this.url).pipe(map(results => results['results']));
+    return this.http.get<Movie>(this.url).pipe(map(results => results['results']));
 
   }
 
   //Search one movie information by id 
-  getMovieDetail (id) {
+  getMovieDetail (id:string) {
 
     this.url = `https://api.themoviedb.org/3/movie/${encodeURI(id)}?api_key=210d6a5dd3f16419ce349c9f1b200d6d&language=en-US`;
 
-    return this.http.get<IMovies>(this.url);
+    return this.http.get<Movie>(this.url);
 
   }
 }
